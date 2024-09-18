@@ -47,8 +47,8 @@ public class ParserController {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Open File");
         File file = chooser.showOpenDialog(new Stage());
-        Path filePath = file.toPath(); // Получаем путь к выбранному файлу
-        String content = new String(Files.readAllBytes(filePath), StandardCharsets.UTF_8); // Читаем содержимое файла в строку
+        Path filePath = file.toPath(); 
+        String content = new String(Files.readAllBytes(filePath), StandardCharsets.UTF_8); 
         textAreaSourceCode.setText(content);
 
     }
@@ -206,7 +206,6 @@ public class ParserController {
         Boolean bool = parser.run();
         if (bool){
             textAreaResult.appendText("The code matches the grammar");
-            // textAreaResult.appendText(parser.getResult());
         }else {
             textAreaResult.appendText("The code no matches the grammar");
         }
